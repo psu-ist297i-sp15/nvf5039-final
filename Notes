@@ -1,0 +1,18 @@
+$('#topic_title').on('blur", function() {
+
+    $.ajax({
+        url: '/validate topic/' + $('#topic_title').attr('value')),
+        dataType: 'json',
+        success: function(json) {
+            alert(json)
+            
+            
+
+rails generate scaffold player name:string 
+// Table of Player objects
+// Player object has:
+    Name
+    SummonerID
+    League?
+    
+// Title is the name of the League
