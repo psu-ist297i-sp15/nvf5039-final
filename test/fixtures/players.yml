@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  riotID: MyString
+  name: MyString
+  k: 1
+  d: 1
+  a: 1
+  cs: 1
+  triple: 1
+  quadra: 1
+  penta: 1
+  towers: 1
+  inhibs: 1
+  dragon: 1
+  baron: 1
+
+two:
+  riotID: MyString
+  name: MyString
+  k: 1
+  d: 1
+  a: 1
+  cs: 1
+  triple: 1
+  quadra: 1
+  penta: 1
+  towers: 1
+  inhibs: 1
+  dragon: 1
+  baron: 1
