@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 
+# Gem so that you can parse header/body instead of using cURL
 gem 'patron'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
