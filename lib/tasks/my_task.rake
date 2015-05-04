@@ -15,7 +15,7 @@ namespace :example do
         puts resp.body
 
         hash = JSON.parse resp.body
-        rid = hash[response]['id']
+        rid = hash[response.downcase]['id'] #downcase to comply with API
         puts rid
         #At this point, we have their riotID
         

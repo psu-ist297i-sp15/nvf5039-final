@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the final project for IST 297I for Nic F - a Ruby on Rails project that focuses on aggregating data for the popular computer game, "League of Legends"
 
-Things you may want to cover:
+The project uses the <tt>Patron</tt> gem in place of cURL, and access data about nonprofessional League of Legends players from around the world. This data is then parsed using JSON and aggregated into the Players table. All players in the table are automatically updated when the player_index refreshes, and this ensures that even for a large number of players, data will be updated and maintained so that top-scoring players are identified.
 
-* Ruby version
+All scoring metrics are read-only and cannot be modified by a web user, which serves to protect this from score manipulation if published.
 
-* System dependencies
+Some things you can do:
+* Run <tt>rake example:my_task2[ingamename]</tt> to create a new player object based on the name that displays when they play League of Legends
+* Refresh localhost:3000/players to update with the most recent game that all players have played
 
-* Configuration
+Next steps for this project include:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Stronger League integration to display data by League, rather than by Player
+* Use of official images/assets to render pages with higher graphic fidelity
+* Implementation of Rake tasks into user-facing buttons or interfacs to allow users to more effectively interact with the database
+* Code refactoring to better support novice and non-Nic users
+* Management to handle the 10 requests per 10 second API limit so that when there are more users, crashing does not occur
+* Management to improve JSON parsing - the current API pulls data for multiple games, which is increased overhead that could be reduced if less game data were pulled
