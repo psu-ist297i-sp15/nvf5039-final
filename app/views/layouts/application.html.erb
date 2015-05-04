@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FantasyLol</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title>FantasyLol</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <style>
+        #name_error {display:none;}
+    </style>
+    <script>
+    $(document).ready(function() {
+        $("#league_name").on("blur", function() {
+            var valid = true;
+            $.ajax({
+                url: "/leagues.json",
+                success: function(data) {
+                    for(i = 0; i < data.length; i++) {
+                        if (data[i].name == $("#league_name").val()) {
+                            $("#name_error").show();
+                            valid = false;
+                            break;
+                        }
+                    }
+                    if (valid) {
+                        $("#name_error").hide();
+                    }
+                }
+            });
+        });
+    });        
+    </script>
+    
 </head>
 <body>
 

@@ -7,17 +7,7 @@
     <tr>
       <th>Riotid</th>
       <th>Name</th>
-      <th>K</th>
-      <th>D</th>
-      <th>A</th>
-      <th>Cs</th>
-      <th>Triple</th>
-      <th>Quadra</th>
-      <th>Penta</th>
-      <th>Towers</th>
-      <th>Inhibs</th>
-      <th>Dragon</th>
-      <th>Baron</th>
+      <th>Score</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,18 +16,8 @@
     <% @players.each do |player| %>
       <tr>
         <td><%= player.riotID %></td>
-        <td><%= player.name %></td>
-        <td><%= player.k %></td>
-        <td><%= player.d %></td>
-        <td><%= player.a %></td>
-        <td><%= player.cs %></td>
-        <td><%= player.triple %></td>
-        <td><%= player.quadra %></td>
-        <td><%= player.penta %></td>
-        <td><%= player.towers %></td>
-        <td><%= player.inhibs %></td>
-        <td><%= player.dragon %></td>
-        <td><%= player.baron %></td>
+        <td><%= player.name.capitalize %></td>
+        <td><%= player.score %></td>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>

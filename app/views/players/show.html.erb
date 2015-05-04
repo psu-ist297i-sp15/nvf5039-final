@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong>Score:</strong>
+  <%= @player.score %>
+</p>
+
+<p>
   <strong>K:</strong>
   <%= @player.k %>
 </p>
@@ -25,45 +30,7 @@
   <%= @player.a %>
 </p>
 
-<p>
-  <strong>Cs:</strong>
-  <%= @player.cs %>
-</p>
 
-<p>
-  <strong>Triple:</strong>
-  <%= @player.triple %>
-</p>
-
-<p>
-  <strong>Quadra:</strong>
-  <%= @player.quadra %>
-</p>
-
-<p>
-  <strong>Penta:</strong>
-  <%= @player.penta %>
-</p>
-
-<p>
-  <strong>Towers:</strong>
-  <%= @player.towers %>
-</p>
-
-<p>
-  <strong>Inhibs:</strong>
-  <%= @player.inhibs %>
-</p>
-
-<p>
-  <strong>Dragon:</strong>
-  <%= @player.dragon %>
-</p>
-
-<p>
-  <strong>Baron:</strong>
-  <%= @player.baron %>
-</p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

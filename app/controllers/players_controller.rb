@@ -10,14 +10,27 @@ class PlayersController < ApplicationController
         @players = Player.search params[:search]
     end
     
+    def updateScore
+        Player.find_each do |player|
+            tmprk = player.k
+            tmprd = player.d
+            tmpra = player.a
+            tmpsum = (3*tmprk) - (1*tmprd) + (2*tmpra)
+            
+            player.update(score:tmpsum)
+        end
+    end
+    
     #Updates all player's KDA stats
     def updatePlayer
         Player.find_each do |player|
-            puts player.riotID
+            #puts player.riotID
             tmprid = player.riotID
-            puts tmprid
+            #puts tmprid
             s = "Rake example:get_last_game_byID[" + tmprid + "]"
             system s
+            
+            updateScore
         end
     end
         

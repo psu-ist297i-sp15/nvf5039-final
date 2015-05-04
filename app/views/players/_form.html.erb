@@ -12,59 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :riotID %><br>
-    <%= f.text_field :riotID %>
+      <%= f.label :riotID %><br>
+      <%= f.text_field :riotID %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :k %><br>
-    <%= f.number_field :k %>
-  </div>
-  <div class="field">
-    <%= f.label :d %><br>
-    <%= f.number_field :d %>
-  </div>
-  <div class="field">
-    <%= f.label :a %><br>
-    <%= f.number_field :a %>
-  </div>
-  <div class="field">
-    <%= f.label :cs %><br>
-    <%= f.number_field :cs %>
-  </div>
-  <div class="field">
-    <%= f.label :triple %><br>
-    <%= f.number_field :triple %>
-  </div>
-  <div class="field">
-    <%= f.label :quadra %><br>
-    <%= f.number_field :quadra %>
-  </div>
-  <div class="field">
-    <%= f.label :penta %><br>
-    <%= f.number_field :penta %>
-  </div>
-  <div class="field">
-    <%= f.label :towers %><br>
-    <%= f.number_field :towers %>
-  </div>
-  <div class="field">
-    <%= f.label :inhibs %><br>
-    <%= f.number_field :inhibs %>
-  </div>
-  <div class="field">
-    <%= f.label :dragon %><br>
-    <%= f.number_field :dragon %>
-  </div>
-  <div class="field">
-    <%= f.label :baron %><br>
-    <%= f.number_field :baron %>
+      <%= f.label :league %><br>
+      <%= f.select :league, options_for_select(League.all.map{|w|[w.name, w.id]}) %>
   </div>
   <div class="actions">
-      <%= f.label :updatePlayer %>
+    <%= f.label :updatePlayer %>
   </div>
   <div class="actions">
     <%= f.submit %>
