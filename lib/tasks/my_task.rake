@@ -22,12 +22,6 @@ namespace :example do
         @current_player = Player.create(riotID:rid, name: args.summ)
     end
     
-    desc "HTML Player Update"
-    task :update_values => :environment do
-        player_update = Player.find(ENV["MAILING_ID"])
-        player_update.updatePlayer
-    end
-    
     task :get_last_game_byID, [:sid] => :environment do |t,args|
         summoner = args.sid
         @current_player = Player.find_by(riotID:summoner)

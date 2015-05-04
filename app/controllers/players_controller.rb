@@ -12,6 +12,15 @@ class PlayersController < ApplicationController
     
     def updateScore
         Player.find_each do |player|
+            if player.k == nil
+                player.k=0
+            end
+            if player.d == nil
+                player.d=0
+            end
+            if player.a == nil
+                player.a=0
+            end
             tmprk = player.k
             tmprd = player.d
             tmpra = player.a

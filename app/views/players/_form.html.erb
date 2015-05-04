@@ -1,3 +1,27 @@
+<head>
+  <script>
+$(document).ready(function() {
+    $("#player_name").on("blur", function() {
+        var valid = true;
+            $.ajax({
+                url: "/players.json",
+                success: function(data) {
+                    for(i=0; i < data.length; i++) {
+                        if (data[i].name == $("#player_name").val()) {
+                            $("#name_error").show();
+                            valid = false
+                            break;
+                        }
+                    }
+                    if (valid) {
+                        $("#name_error").hide();
+                    }
+                }
+            });
+        });
+    });        
+    </script>
+</head>
 <%= form_for(@player) do |f| %>
   <% if @player.errors.any? %>
     <div id="error_explanation">
@@ -14,11 +38,11 @@
   <div class="field">
       <%= f.label :riotID %><br>
       <%= f.text_field :riotID %>
-      <p id="name_error" class="bg-danger">This Riot ID already exists</p>
   </div>
   <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
+      <p id="name_error" class="bg-danger">This name already exists</p>
   </div>
   <div class="field">
       <%= f.label :league %><br>

@@ -8,28 +8,7 @@
     <style>
         #name_error {display:none;}
     </style>
-    <script>
-$(document).ready(function() {
-    $("#player_name").on("blur", function() {
-        var valid = true;
-            $.ajax({
-                url: "/players.json",
-                success: function(data) {
-                    for(i=0; i < data.length; i++) {
-                        if (data[i].name == $("#player_name").val()) {
-                            $("#name_error").show();
-                            valid = false
-                            break;
-                        }
-                    }
-                    if (valid) {
-                        $("#name_error").hide();
-                    }
-                }
-            });
-        });
-    });        
-    </script>
+  
     
 </head>
 <body>
