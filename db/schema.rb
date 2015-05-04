@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501021817) do
+ActiveRecord::Schema.define(version: 20150504053228) do
 
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
@@ -27,13 +27,6 @@ ActiveRecord::Schema.define(version: 20150501021817) do
     t.integer  "d"
     t.integer  "a"
     t.integer  "cs"
-    t.integer  "triple"
-    t.integer  "quadra"
-    t.integer  "penta"
-    t.integer  "towers"
-    t.integer  "inhibs"
-    t.integer  "dragon"
-    t.integer  "baron"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

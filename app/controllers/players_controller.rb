@@ -6,6 +6,10 @@ FantasyLol::Application.load_tasks
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
     
+    def search
+        @players = Player.search params[:search]
+    end
+    
     #Updates all player's KDA stats
     def updatePlayer
         Player.find_each do |player|
