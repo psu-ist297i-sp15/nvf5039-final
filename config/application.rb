@@ -22,5 +22,13 @@ module FantasyLol
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths << Rails.root.join('lib')  
   end
+    
+    def call_rake(task, options = {})
+      options[:rails_env] ||= Rails.env
+      args = options.map { |n, v| "#{n.to_s.upcase}='#{v}'" }
+      system "/usr/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{Rails.root}/log/rake.log &"
+    end
+    
 end

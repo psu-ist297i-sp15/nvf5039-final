@@ -1,10 +1,27 @@
+require 'rake'
+
+Rake::Task.clear # necessary to avoid tasks being loaded several times in dev mode
+FantasyLol::Application.load_tasks
+
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
-
+    
+    #Updates all player's KDA stats
+    def updatePlayer
+        Player.find_each do |player|
+            puts player.riotID
+            tmprid = player.riotID
+            puts tmprid
+            s = "Rake example:get_last_game_byID[" + tmprid + "]"
+            system s
+        end
+    end
+        
   # GET /players
   # GET /players.json
   def index
     @players = Player.all
+      updatePlayer
   end
 
   # GET /players/1

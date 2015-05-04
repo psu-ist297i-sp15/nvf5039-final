@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Players</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Score</th>
+      <th>Name</th>
+      <th>K</th>
+      <th>D</th>
+      <th>A</th>
+      <th>Cs</th>
+      <th>Triple</th>
+      <th>Quadra</th>
+      <th>Penta</th>
+      <th>Towers</th>
+      <th>Inhibs</th>
+      <th>Dragon</th>
+      <th>Baron</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= (player.k * 3) + (player.d * -1) + (player.a * 2) %></td>
+        <td><%= player.name %></td>
+        <td><%= player.k %></td>
+        <td><%= player.d %></td>
+        <td><%= player.a %></td>
+        <td><%= player.cs %></td>
+        <td><%= player.triple %></td>
+        <td><%= player.quadra %></td>
+        <td><%= player.penta %></td>
+        <td><%= player.towers %></td>
+        <td><%= player.inhibs %></td>
+        <td><%= player.dragon %></td>
+        <td><%= player.baron %></td>
+        <td><%= link_to 'Show', player %></td>
+        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Player', new_player_path %>
